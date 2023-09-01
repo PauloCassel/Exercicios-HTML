@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+    </head>
+    <body>
+        <!-- required: necessario colocar -->
+        <!-- autofocus: começa por ele -->
+        <!-- minlength: minimo de caracteres -->
+        <!-- min/max: valor minimo e maximo-->
+        <form action="#" >
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" id="nome" required autofocus minlength="3">
+        </br>
+            <label for="email">Email: </label>
+            <input type="text" name="email" id="email" required>
+        </br>
+            <label for="matricula">Matricula: </label> <!--Apenas numeros-->
+            <input type="number" name="matricula" id="matricula" min="2000" max="3000" required>
+        </br>
+            <label for="nascimento">Nascimento: </label> <!--Nascimento pelo calendario-->
+            <input type="date" name="nascimento" id="nascimento">
+        </br>
+            <label for="senha">Senha: </label> <!--Inserir senha (*****)-->
+            <input type="password" name="senha" id="senha" required>
+        </br>
+            <label for="usage">Arquivo: </label> <!--Upar Arquivo-->
+            <input type="file" name="arquivo" id="arquivo">
+        </br>
+            <label for="color">Cor: </label> <!--Mudar cor-->
+            <input type="color" name="color" id="color">
+        </br>
+            <label for="genero">Genero: </label> <!--Apenas uma opção-->
+            <input type="radio" name="genero" value="masculino">Masculino
+            <input type="radio" name="genero" value="feminino">Feminino
+        </br>
+            <label for="linguagem">Linguagem: </label> <!--Opções multiplas-->
+            <input type="checkbox" name="linguagem" value="html">HTML
+            <input type="checkbox" name="linguagem" value="css">CSS
+            <input type="checkbox" name="linguagem" value="javascript">JavaScript
+            <input type="checkbox" name="linguagem" value="php">PHP
+        </br>
+            <select name="cidades"> <!--Selecionar uma cidade-->
+                <option value=""></option> <!--Opção vazia para começar-->
+                <option value="canoas">Canoas</option>
+                <option value="poa">Porto Alegre</option>
+                <option value="esteio">Esteio</option>
+            </select>
+        </br>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>

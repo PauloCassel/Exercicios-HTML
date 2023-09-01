@@ -1,0 +1,27 @@
+p {
+    color: pink;
+    font-size: 100px;
+}
+body {
+    background-color: yellow;
+}
+
+.texto-amarelo {
+    background-color: red;
+    color: yellow;
+    border: 10px solid black;
+}
+
+#alessandro {
+    color: cyan;
+    border: 10px dotted orange;
+    font-size: 200px
+}
+
+.texto-imporante {
+    color: red;
+}
+
+.texto-nao-importante {
+    color: blue;
+}
