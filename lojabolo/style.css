@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    padding-right: 20px;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+header {
+    background-color: mediumvioletred;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background-color: #f2d0e0;
+}
+
+footer {
+    background-color: mediumvioletred;
+}
+
+h2 {
+    justify-self: start;
+}
+
+button {
+    justify-self: end;
+}
