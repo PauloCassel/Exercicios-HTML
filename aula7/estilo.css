@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+}
+
+.grid div {
+    border: 1px solid black;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-device-width: 480px)
+{
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid div {
+        height: 40px;
+        align-items: start;
+        color: red;
+    }
+}
+
+@media screen and (min-device-width: 481px)
+{
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}

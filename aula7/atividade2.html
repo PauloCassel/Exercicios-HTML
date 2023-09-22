@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 7px;
+        }
+        div {
+            border: solid black 1px;
+        }
+
+        .pai li {
+            font-size: 3rem;
+        }
+
+        .pai {
+            height: 20vw;
+            width: 50%;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        .filho li{
+            font-size: 70%;
+        }
+        
+        .filho {
+            width: 10%;
+            height: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="pai">
+        <ul>
+            <li>A minha fonte tem 3 vezes o tamanho da fonte do root.</li>
+            <li>Os meus padding verticais possuem 2 vezes o tamanho da minha fonte.</li>
+            <li>A minha altura assume vinte porcento do comprimento da tela toda.</li>
+            <li>Já o meu comprimento assume metade da altura da tela toda.</li>
+        </ul>
+        <div class="filho">
+            <ul>
+                <li>A minha fonte é setenta porcento da fonte do meu pai.</li>
+                <li>O meu comprimento é dez porcento de comprimento do meu pai.</li>
+                <li>A minha altura é dez porcento da altura do meu pai.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
