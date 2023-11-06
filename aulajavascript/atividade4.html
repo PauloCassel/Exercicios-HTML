@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bola {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #retangulo {
+            width: 60px;
+            height: 500px;
+            background-color: blue;
+            position: absolute;
+            left: 600px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bola">
+
+    </div>
+    <div id="retangulo">
+
+    </div>
+    <script>
+        // window.onkeypress = function(e) {
+        //     if(e.key == 'a') {
+        //         alert("Abner");
+        //     } else if(e.key == 'b') {
+        //         alert("Bruno")
+        //     }
+        // }
+        
+        let bola = document.getElementById("bola")
+        let retangulo = document.getElementById("retangulo")
+
+        let posTop = 0
+        let posLeft = 0
+        let size = 200
+
+        bola.style.left = `${posLeft}`
+        bola.style.top = `${posTop}`
+        bola.style.size = `${size}`
+
+        window.onkeypress = function(e) {
+            if(e.key == 'd') {
+                posLeft = posLeft + 10
+                bola.style.left = posLeft + 'px'
+            } else if(e.key == 's') {
+                posTop = posTop + 10
+                bola.style.top = posTop + 'px'
+            } else if(e.key == 'w') {
+                posTop = posTop - 10
+                bola.style.top = posTop + 'px'
+            } else if(e.key == 'a') {
+                posLeft = posLeft - 10
+                bola.style.left = posLeft + 'px'
+            } else if(e.key == 'm') {
+                size = size + 10
+                bola.style.height = size + 'px'
+                bola.style.width = size + 'px'
+            } else if(e.key == 'n') {
+                size = size - 10
+                bola.style.height = size + 'px'
+                bola.style.width = size + 'px'
+            } else if(e.key == 'q') {
+                bola.style.borderRadius = '0%'
+            } else if(e.key == 'b') {
+                bola.style.borderRadius = '50%'
+            } if(posTop <= 530 && posLeft > 600 - size) {
+                alert("erro!")
+
+                posTop = 0
+                posLeft = 0
+
+                bola.style.left = `${posLeft}`
+                bola.style.top = `${posTop}`
+                size = 200
+                bola.style.width = 200
+                bola.style.height = 200
+            }
+        }
+    </script>
+</body>
+</html>

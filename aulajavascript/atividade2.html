@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="botao">Clique Aqui</button>
+    <img id="imagem" src="imagem.jpg">
+    <script>
+        // let btn = document.getElementById("botao")
+        // btn.onclick = function() {
+        //     alert("Clicou no botão")
+        // }
+
+        // btn.onfocus = function() {
+        //     alert("Focou o botão")
+        // }
+
+        // btn.onblur = function() {
+        //     alert("Saiu de foco")
+        // }
+
+        // btn.ondblclick = function() {
+        //     alert("Clicou no botão duas vezes")
+        // }
+
+        // btn.onmouseover = function() {
+        //     alert("Passou o mouse")
+        // }
+
+        let btn = document.getElementById("botao")
+        let imagem = document.getElementById("imagem")
+        btn.onclick = function() {
+            randomColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = '#'+randomColor
+            imagem.style.display = "none"
+        }
+
+        btn.ondblclick = function() {
+            imagem.style.display = "block"
+        }
+    </script>
+</body>
+</html>

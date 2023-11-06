@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <input type="text" id="nome" placeholder="Digite sua descrição">
+        <input type="text" id="senha" placeholder="Digite sua senha:">
+        <input type="text" id="senha2" placeholder="Digite sua senha:">
+        <button type="button" id="btn">Entrar</button>
+        <button type="button" id="btn2">Senha</button>
+    </form>
+    <script>
+        let btn = document.getElementById("btn")
+        let input = document.getElementById("nome")
+
+        let btn2 = document.getElementById("btn2")
+        let input2 = document.getElementById("senha")
+        let input3 = document.getElementById("senha2")
+
+        btn.onclick = function() {
+            if(input.value.includes("pa") || input.value.includes("pe") || input.value.includes("pi") || input.value.includes("po") || input.value.includes("pu")) {
+                alert("Há algo errado com o texto.")
+            } else {
+                alert("tudo certo")
+            }
+        }
+        
+        btn2.onclick = function() {
+            if(input2.value == input3.value) {
+                alert("Senha correta")
+            } else {
+                alert("Senha incorreta")
+            }
+        }
+
+        setTimeout(function(){
+            alert("oi")
+        }, 3000)
+
+        setInterval(function(){
+            // document.write("Olá")
+        }, 2000)
+    </script>
+</body>
+</html>
