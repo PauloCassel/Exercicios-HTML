@@ -1,0 +1,19 @@
+#deputados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+img {
+    max-width: 100px;
+    min-width: 100px;
+}
+
+p {
+    padding: 100px;
+}
+
+#borda {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}

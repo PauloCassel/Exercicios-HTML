@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div id="tela">
+
+        <button id="chats" onClick="chatz()">Chat</button>
+        
+        <div id="chat">
+            <div id="chatd">
+                <ul id="lista"></ul>
+            </div>
+
+            <input type="text" id="mensagem" placeholder="Mensagem">
+
+            <button onClick="adicionar()">Enviar</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function chatz() {
+        let chat = document.getElementById("chat");
+
+        chat.style.display = 'block';
+        scroll()
+    }
+
+    let mensagens = [];
+        
+        document.onload = atualizar()
+
+        function atualizar() {
+            if(sessionStorage.getItem('mensagens')) {
+                mensagens = JSON.parse(sessionStorage.getItem('mensagens'))
+
+                for(let i = 0; i < mensagens.length; i++) {
+                    mostrar(mensagens[i].text, mensagens[i].id)
+                }
+            }
+        }
+
+    function adicionar() {
+            let mensagem = document.getElementById('mensagem')
+            let texto = mensagem.value.trim()
+
+            let id = Math.random().toString(36).substring(2, 15)
+
+            if(texto != "") {
+                mensagens.push({
+                    text: texto,
+                    id: id
+                })
+
+                mostrar(texto, id)
+                mensagem.value = ''
+                salvar()
+                scroll()
+            }
+        }
+
+        function mostrar(text, id) {
+            let lista = document.getElementById('lista')
+            let item = document.createElement('li')
+
+            item.innerHTML = text
+
+            lista.appendChild(item)
+        }
+
+        function salvar() {
+            sessionStorage.setItem("mensagens", JSON.stringify(mensagens))
+        }
+
+        function scroll() {
+            let listas = document.getElementById('lista')
+
+            listas.scrollTop = listas.scrollHeight
+        }
+</script>
+</html>

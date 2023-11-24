@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styled.css">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Deputados</h4>
+    <div id="deputados"></div>
+    <script>
+
+        fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome`)
+         .then(response => response.json())
+         .then(function(data) {
+
+            let deputados = document.getElementById("deputados")
+
+            data.dados.forEach(function(deputado) {
+                let lista = document.createElement('div')
+                lista.id = 'borda'
+                lista.innerHTML = `<img src="${deputado.urlFoto}"><p> ${deputado.nome}<br> ${deputado.siglaUf} <br> ${deputado.email} <br> ${deputado.siglaPartido}`
+                deputados.appendChild(lista)
+            })
+        })
+
+        .catch(err => console.log("erro: " + err))
+    </script>
+</body>
+</html>

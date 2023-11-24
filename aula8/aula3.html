@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>CEP</label>
+    <input type="text" id="cep"><button id="btn">Buscar</button>
+    <br>
+    <label>Rua</label>
+    <input type="text" id="rua">
+    <br>
+    <label>Cidade</label>
+    <input type="text" id="cidade">
+    <br>
+    <label>Bairro</label>
+    <input type="text" id="bairro">
+    <script>
+        let btn = document.getElementById("btn")
+
+        btn.onclick = function() {
+        //let cep = document.getElementById("cep").value
+
+        fetch(`https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome`)
+        .then(function(response) {
+            return response.json()
+        })
+        // .then(response => response.json())
+        // .then(function(json) {
+        //     let rua = document.getElementById("rua")
+        //     rua.value = json.logradouro
+        //     let cidade = document.getElementById("cidade")
+        //     cidade.value = json.localidade
+        //     let bairro = document.getElementById("bairro")
+        //     bairro.value = json.bairro
+        //})
+        .catch(err => console.log("erro: " + err))
+        }
+    </script>
+</body>
+</html>

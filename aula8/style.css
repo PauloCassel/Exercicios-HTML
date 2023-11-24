@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rubik', sans-serif;
+    list-style: none;
+}
+
+#chats{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#chat {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    border: 1px solid black;
+    padding: 20px 70px 10px 70px;
+    background-color: white;
+}
+
+#chatd {
+    display: flex;
+    justify-content: right;
+}
+
+li {
+    background-color: rgba(141, 255, 123, 0.486);
+    margin: 5px;
+    padding: 5px;
+}
+
+ul {
+    height: 400px;
+    overflow-y: auto;
+}

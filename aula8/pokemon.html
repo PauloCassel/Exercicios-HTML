@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projeto Pokemon</title>
+</head>
+<body>
+    <h4>Pokedex</h4>
+    <div id="pokemon"></div>
+
+    <script>
+        fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=20`)
+            .then(response => response.json())
+            .then(function(data) {
+                let container = document.getElementById("pokemon");
+
+                data.results.forEach(function(pokemon) {
+                    let divPokemon = document.createElement('div');
+                    divPokemon.classList.add("lista");
+                    divPokemon.id = 'borda';
+                    divPokemon.innerHTML = `<p>${pokemon}</p>`;
+                    container.appendChild(divPokemon);
+                });
+            })
+            .catch(err => console.log("erro: " + err))
+    </script>
+</body>
+</html>
